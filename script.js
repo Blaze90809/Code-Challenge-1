@@ -19,9 +19,9 @@ var button2= "<button type='button' id='deleteButton' name='button2'>Delete</but
 }
 
 function swapFunction(){
-  $('#generateD').css('background-color', 'yellow');
+  $(this).parent().css('background-color', 'yellow');
 }
 
 function deleteFunction(){
-  $('#generateD').remove();
+  $(this).parent().remove();
 }
