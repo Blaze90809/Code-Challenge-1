@@ -2,21 +2,20 @@ $(document).ready(readyNow);
 
 function readyNow() {
   $('#gen').on('click', generateFunction);
-  $('.CodeClass').on('click', '#swapButton', swapFunction);
-  $('.CodeClass').on('click', '#deleteButton', deleteFunction);
+  $('div').on('click', '#swapButton', swapFunction);
+  $('div').on('click', '#deleteButton', deleteFunction);
 }
 
-clicks=0;
+var clicks=0;
 function generateFunction(){
-  clicks++;
-var append = "<div id='generateD'></div>";
-var button1= "<button type='button' id='swapButton' name='button1'>Swap</button>";
-var button2= "<button type='button' id='deleteButton' name='button2'>Delete</button>";
-  $('.CodeClass').append(append);
-  $('#generateD').append('<p>' + clicks + '</p>');
-  $('#generateD').append(button1);
-  $('#generateD').append(button2);
+
+clicks++;
+  var button1= "<button type='button' id='swapButton' name='button1'>Swap</button>";
+  var button2= "<button type='button' id='deleteButton' name='button2'>Delete</button>";
+  var clickCount='<p>' + clicks + '</p>';
+  $('.CodeClass').append('<div>' + button1 + button2 + clickCount + '</div>');
 }
+console.log(clicks);
 
 function swapFunction(){
   $(this).parent().css('background-color', 'yellow');
